@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <p>Please enter your queries below</p>
+    <title>Inquery Page!</title>
+  </head>
+  <body>
+      <form id="form" method="post">
+        <p>Email</p>
+        <input type="text" id="email" placeholder="Email"/>
+        <p>Query</p>
+        <input type="text" id="body" placeholder="Body"/>
+        <p>Mobile</p>
+        <input type="text" id="mobile" placeholder="Mobile"/>
+        <p>Click Here</p>
+        <input type="submit" value="Send Query"/>
+      </form>
+  </body>
+  <script>
+    var form = document.getElementById('form')
+    form.addEventListener('submit',function(e){
+      //auto submission of form
+      e.preventDefault()
+
+      var email = document.getElementById('email').value
+      var body = document.getElementById('body').value
+      var mobile = document.getElementById('mobile').value
+
+      //fetch post request
+      fetch("http://localhost:9191/Inquiry/addInquiry",{
+        method:'POST',
+        body:JSON.stringify({
+          email:email,
+          body:body,
+          mobile:mobile
+        }),
+        headers:{
+          "Content-Type":"application/json; charset=UTF-8"
+        }
+      }) //fetch end
+      .then(function(response){
+        return response.json()
+      })
+      .then(function(data){
+        console.log(data)
+        var results = document.getElementById('results')
+
+        results.innerHTML = `<p>The email is ${data.title}</p>
+        <p>The query is ${data.body}</p><p>Mobile number is ${data.mobile}</p>`
+      })
+
+    }) //form end
+  </script>
+</html>

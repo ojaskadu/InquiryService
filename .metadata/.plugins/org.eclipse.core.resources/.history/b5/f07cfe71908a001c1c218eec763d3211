@@ -1,0 +1,5 @@
+package com.broadband.inquiry.service.entity;
+
+public class Inquiry {
+
+}

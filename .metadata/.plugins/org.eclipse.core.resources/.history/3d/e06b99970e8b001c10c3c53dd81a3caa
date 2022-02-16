@@ -1,0 +1,16 @@
+package com.broadband.inquiry.service.service;
+
+import org.springframework.stereotype.Service;
+
+import com.broadband.inquiry.service.entity.Inquiry;
+
+@Service
+public class InquiryService {
+	
+	private InquiryRepository repository;
+	
+	public Inquiry saveInquiry(Inquiry inquiry)
+	{
+		return repository.saveInquiry(inquiry);
+	}
+}

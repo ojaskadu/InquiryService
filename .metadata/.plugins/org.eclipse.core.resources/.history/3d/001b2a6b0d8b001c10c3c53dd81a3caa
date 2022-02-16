@@ -1,0 +1,14 @@
+package com.broadband.inquiry.service.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.broadband.inquiry.service.service.InquiryService;
+
+@RestController
+public class InquiryController {
+
+	@Autowired
+	private InquiryService inquiryService;
+	
+}

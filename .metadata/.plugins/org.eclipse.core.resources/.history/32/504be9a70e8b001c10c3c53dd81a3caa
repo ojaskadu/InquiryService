@@ -1,0 +1,9 @@
+package com.broadband.inquiry.service.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.broadband.inquiry.service.entity.Inquiry;
+
+public interface InquiryRepository extends JpaRepository<Inquiry, Integer>{
+
+}

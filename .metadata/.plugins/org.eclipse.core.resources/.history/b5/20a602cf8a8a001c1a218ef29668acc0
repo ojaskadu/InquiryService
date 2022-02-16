@@ -1,0 +1,5 @@
+package com.broadband.inquiry.service.controller;
+
+public class InquiryServiceController {
+
+}
